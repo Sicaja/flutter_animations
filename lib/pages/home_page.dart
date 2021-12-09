@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/routes/routes_values.dart';
+import 'package:get/route_manager.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -33,9 +35,14 @@ class Home extends StatelessWidget {
             sliver: SliverList(
               delegate: SliverChildListDelegate(
                 <Widget>[
-                  const ButtonCustom(
+                  ButtonCustom(
                     title: "Animation Builder",
                     colorButton: Colors.lightBlue,
+                    onPressed: () {
+                      Get.toNamed(
+                        RoutesValues.animationBuilder,
+                      );
+                    },
                   ),
                 ],
               ),
@@ -62,7 +69,7 @@ class ButtonCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       color: colorButton ?? Colors.blue,
-      onPressed: () {},
+      onPressed: onPressed,
       child: Text(
         title,
         style: const TextStyle(
