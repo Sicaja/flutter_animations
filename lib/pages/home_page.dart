@@ -36,11 +36,20 @@ class Home extends StatelessWidget {
               delegate: SliverChildListDelegate(
                 <Widget>[
                   ButtonCustom(
-                    title: "Animation Builder",
+                    title: "Animation Controller",
                     colorButton: Colors.lightBlue,
                     onPressed: () {
                       Get.toNamed(
                         RoutesValues.animationBuilder,
+                      );
+                    },
+                  ),
+                  ButtonCustom(
+                    title: "Animation Transform",
+                    colorButton: Colors.lightBlue,
+                    onPressed: () {
+                      Get.toNamed(
+                        RoutesValues.animationTransform,
                       );
                     },
                   ),

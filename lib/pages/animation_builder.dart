@@ -19,18 +19,67 @@ class AnimationBuilderExample extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "0",
+                  animation.counter?.value.toStringAsFixed(4) ?? "0",
                   style: Get.textTheme.headline1,
                 ),
-                MaterialButton(
-                  onPressed: () {},
-                  color: Colors.grey.shade700,
-                  child: Text(
-                    "Start",
-                    style: Get.textTheme.headline3?.copyWith(
-                      color: Colors.white,
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  spacing: 10,
+                  runSpacing: 10,
+                  children: [
+                    MaterialButton(
+                      disabledColor: Colors.grey,
+                      onPressed: (animation.isAnimationComplete)
+                          ? null
+                          : () {
+                              animation.animationController?.reset();
+                              animation.isAnimationComplete = true;
+                            },
+                      color: Colors.red,
+                      child: Text(
+                        "STOP",
+                        style: Get.textTheme.headline3?.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
                     ),
-                  ),
+                    MaterialButton(
+                      disabledColor: Colors.grey,
+                      onPressed: (animation.isAnimationComplete)
+                          ? null
+                          : () {
+                              animation.animationController?.stop();
+                            },
+                      color: Colors.grey.shade700,
+                      child: Text(
+                        "PAUSE",
+                        style: Get.textTheme.headline3?.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    MaterialButton(
+                      onPressed: () {
+                        if (animation.animationController?.isCompleted ??
+                            true) {
+                          animation.animationController?.forward(from: 0.0);
+                        } else {
+                          animation.animationController?.forward();
+                        }
+                        animation.isAnimationComplete = false;
+                      },
+                      color: animation.color?.value ?? Colors.grey.shade700,
+                      child: Text(
+                        "START",
+                        style: Get.textTheme.headline3?.copyWith(
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

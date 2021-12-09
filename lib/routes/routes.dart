@@ -1,5 +1,5 @@
-import 'package:flutter/animation.dart';
 import 'package:flutter_animations/pages/animation_builder.dart';
+import 'package:flutter_animations/pages/animation_transform.dart';
 import 'package:flutter_animations/pages/home_page.dart';
 import 'package:flutter_animations/routes/routes_values.dart';
 import 'package:get/route_manager.dart';
@@ -14,6 +14,14 @@ abstract class Routes {
       name: RoutesValues.animationBuilder,
       page: () => const AnimationBuilderExample(),
       transition: Transition.size,
+      transitionDuration: const Duration(
+        milliseconds: 300,
+      ),
+    ),
+    GetPage(
+      name: RoutesValues.animationTransform,
+      page: () => const AnimationTransform(),
+      transition: Transition.leftToRightWithFade,
       transitionDuration: const Duration(
         milliseconds: 300,
       ),
