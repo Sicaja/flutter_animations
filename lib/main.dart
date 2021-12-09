@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/routes.dart';
-import 'package:flutter_animations/routes_values.dart';
+import 'package:flutter_animations/routes/routes.dart';
+import 'package:flutter_animations/routes/routes_values.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() => runApp(const MyApp());

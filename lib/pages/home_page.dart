@@ -7,6 +7,9 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         slivers: [
           SliverAppBar(
             stretch: true,
@@ -25,7 +28,46 @@ class Home extends StatelessWidget {
               ),
             ),
           ),
+          SliverPadding(
+            padding: const EdgeInsets.all(10),
+            sliver: SliverList(
+              delegate: SliverChildListDelegate(
+                <Widget>[
+                  const ButtonCustom(
+                    title: "Animation Builder",
+                    colorButton: Colors.lightBlue,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
+      ),
+    );
+  }
+}
+
+class ButtonCustom extends StatelessWidget {
+  const ButtonCustom({
+    Key? key,
+    required this.title,
+    this.onPressed,
+    this.colorButton,
+  }) : super(key: key);
+
+  final String title;
+  final void Function()? onPressed;
+  final Color? colorButton;
+  @override
+  Widget build(BuildContext context) {
+    return MaterialButton(
+      color: colorButton ?? Colors.blue,
+      onPressed: () {},
+      child: Text(
+        title,
+        style: const TextStyle(
+          color: Colors.white,
+        ),
       ),
     );
   }
