@@ -13,8 +13,28 @@ class AnimationTransform extends StatelessWidget {
       builder: (animation) {
         return Scaffold(
           appBar: AppBar(),
-          body: const Center(
-            child: Text("Wenas"),
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Center(
+                child: Transform.scale(
+                  scale: animation.iconAnimation?.value ?? 10,
+                  child: const Icon(
+                    Icons.play_arrow,
+                  ),
+                ),
+              ),
+              // Transform.translate(
+              //   offset: Offset(0, animation.dy?.value ?? 5),
+              //   child: Center(
+              //     child: Container(
+              //       color: Colors.amber,
+              //       width: 300,
+              //       height: 300,
+              //     ),
+              //   ),
+              // ),
+            ],
           ),
         );
       },
