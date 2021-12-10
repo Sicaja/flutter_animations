@@ -20,7 +20,7 @@ class PageViewTransform extends StatelessWidget {
           body: Center(
             child: PageView.builder(
               controller: animation.pageController,
-              
+              scrollDirection: Axis.vertical,
               itemBuilder: (con, index) {
                 final percent = (animation.currentPage - index);
                 final value = percent.clamp(0.0, 1.0);
