@@ -12,13 +12,13 @@ class AnimationTransformController extends GetxController
     animationController = AnimationController(
       vsync: this,
       duration: const Duration(
-        seconds: 1,
+        seconds: 5,
       ),
     );
     iconAnimation = TweenSequence([
       TweenSequenceItem(
         tween: Tween<double>(
-          begin: 10,
+          begin: 0,
           end: 8,
         ),
         weight: 50,
@@ -26,7 +26,7 @@ class AnimationTransformController extends GetxController
       TweenSequenceItem(
         tween: Tween<double>(
           begin: 8,
-          end: 10,
+          end: 20,
         ),
         weight: 50,
       ),
@@ -42,7 +42,7 @@ class AnimationTransformController extends GetxController
     dy?.addListener(() {
       update();
     });
-    animationController?.repeat();
+    animationController?.forward();
     super.onInit();
   }
 

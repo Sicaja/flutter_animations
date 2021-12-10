@@ -16,24 +16,22 @@ class AnimationTransform extends StatelessWidget {
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Center(
-                child: Transform.scale(
-                  scale: animation.iconAnimation?.value ?? 10,
-                  child: const Icon(
-                    Icons.play_arrow,
+              Transform.translate(
+                offset: Offset(0, animation.dy?.value ?? 5),
+                child: Center(
+                  child: Container(
+                    color: Colors.amber,
+                    width: 300,
+                    height: 300,
+                    child: Transform.scale(
+                      scale: animation.iconAnimation?.value ?? 10,
+                      child: const Icon(
+                        Icons.play_arrow,
+                      ),
+                    ),
                   ),
                 ),
               ),
-              // Transform.translate(
-              //   offset: Offset(0, animation.dy?.value ?? 5),
-              //   child: Center(
-              //     child: Container(
-              //       color: Colors.amber,
-              //       width: 300,
-              //       height: 300,
-              //     ),
-              //   ),
-              // ),
             ],
           ),
         );
