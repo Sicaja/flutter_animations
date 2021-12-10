@@ -2,6 +2,7 @@ import 'package:flutter_animations/pages/animation_builder.dart';
 import 'package:flutter_animations/pages/animation_transform.dart';
 import 'package:flutter_animations/pages/animation_transform_3d.dart';
 import 'package:flutter_animations/pages/home_page.dart';
+import 'package:flutter_animations/pages/pageview_transform.dart';
 import 'package:flutter_animations/routes/routes_values.dart';
 import 'package:get/route_manager.dart';
 
@@ -31,6 +32,14 @@ abstract class Routes {
       name: RoutesValues.animationTransform3D,
       page: () => const AnimationTransform3D(),
       transition: Transition.cupertino,
+      transitionDuration: const Duration(
+        milliseconds: 300,
+      ),
+    ),
+    GetPage(
+      name: RoutesValues.pageviewtransform,
+      page: () => const PageViewTransform(),
+      transition: Transition.cupertinoDialog,
       transitionDuration: const Duration(
         milliseconds: 300,
       ),

@@ -62,6 +62,15 @@ class Home extends StatelessWidget {
                       );
                     },
                   ),
+                  ButtonCustom(
+                    title: "Page view transform",
+                    colorButton: Colors.lightBlue,
+                    onPressed: () {
+                      Get.toNamed(
+                        RoutesValues.pageviewtransform,
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
