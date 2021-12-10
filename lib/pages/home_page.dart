@@ -53,6 +53,15 @@ class Home extends StatelessWidget {
                       );
                     },
                   ),
+                  ButtonCustom(
+                    title: "Animation Transform 3D",
+                    colorButton: Colors.lightBlue,
+                    onPressed: () {
+                      Get.toNamed(
+                        RoutesValues.animationTransform3D,
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
