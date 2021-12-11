@@ -21,6 +21,11 @@ class ScrollAnimation extends StatelessWidget {
                 child: CustomScrollView(
                   controller: animation.scrollController,
                   slivers: [
+                    const SliverToBoxAdapter(
+                      child: Placeholder(
+                        fallbackHeight: 100.00,
+                      ),
+                    ),
                     SliverPersistentHeader(
                       delegate: CustomPersistentHeader(),
                       floating: true,
