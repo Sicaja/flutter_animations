@@ -5,4 +5,5 @@ abstract class RoutesValues {
   static String animationTransform3D = "/animationtransform3d";
   static String pageviewtransform = "/pageviewtransform";
   static String scrollanimation = "/scrollanimation";
+  static String scrolldraggable = "/scrolldraggable";
 }

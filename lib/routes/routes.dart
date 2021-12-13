@@ -1,6 +1,7 @@
 import 'package:flutter_animations/pages/animation_builder.dart';
 import 'package:flutter_animations/pages/animation_transform.dart';
 import 'package:flutter_animations/pages/animation_transform_3d.dart';
+import 'package:flutter_animations/pages/draggablescrollsheet_challenge.dart';
 import 'package:flutter_animations/pages/home_page.dart';
 import 'package:flutter_animations/pages/pageview_transform.dart';
 import 'package:flutter_animations/pages/scrollanimation.dart';
@@ -48,6 +49,14 @@ abstract class Routes {
     GetPage(
       name: RoutesValues.scrollanimation,
       page: () => const ScrollAnimation(),
+      transition: Transition.fade,
+      transitionDuration: const Duration(
+        milliseconds: 300,
+      ),
+    ),
+    GetPage(
+      name: RoutesValues.scrolldraggable,
+      page: () => const DraggableScrollSheetChallenge(),
       transition: Transition.fade,
       transitionDuration: const Duration(
         milliseconds: 300,

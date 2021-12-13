@@ -80,6 +80,15 @@ class Home extends StatelessWidget {
                       );
                     },
                   ),
+                  ButtonCustom(
+                    title: "Draggable Scroll Animation",
+                    colorButton: Colors.lightBlue,
+                    onPressed: () {
+                      Get.toNamed(
+                        RoutesValues.scrolldraggable,
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
